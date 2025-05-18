@@ -1,0 +1,17 @@
+.button {
+  padding: 10px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button--primary {
+  background-color: green;
+  color: white;
+}
+
+.button--danger {
+  background-color: red;
+  color: white;
+}

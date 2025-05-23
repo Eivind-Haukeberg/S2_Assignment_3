@@ -63,13 +63,9 @@ const ExpenseForm = ({ onAddExpense }) => {
         value={form.category}
         onChange={handleChange}>
         <option value=''>Select Category</option>
-        <option value='housing'>Housing</option>
-        <option value='utilities'>Utilities</option>
-        <option value='grocery'>Grocery</option>
-        <option value='transportation'>Transportation</option>
-        <option value='clothing'>Clothing</option>
-        <option value='entertainment'>Entertainment</option>
-        <option value='other'>Other</option>
+        <option value='Computers'>Computers</option>
+        <option value='Television'>Television</option>
+        <option value='Gaming'>Gaming</option>
       </select>
       <Button type='submit' styleType='primary'>
         Add Expense

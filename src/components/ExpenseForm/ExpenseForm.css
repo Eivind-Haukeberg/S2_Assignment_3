@@ -1,0 +1,14 @@
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 400px;
+  margin-bottom: var(--spacing-md);
+}
+
+.expense-form__input,
+.expense-form__select {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}

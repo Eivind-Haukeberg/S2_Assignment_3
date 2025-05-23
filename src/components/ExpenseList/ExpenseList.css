@@ -1,0 +1,11 @@
+.expense-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+}
+
+.expense-list th,
+.expense-list td {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-sm);
+}

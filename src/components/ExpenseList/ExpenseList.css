@@ -8,10 +8,17 @@
 .expense-list td {
   border: 1px solid var(--color-border);
   padding: var(--spacing-sm);
+  text-align: left;
 }
 
-.expense-list__caption {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: var(--spacing-sm);
+.expense-list__wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Responsive: make table scrollable on small screens */
+@media (max-width: 768px) {
+  .expense-list {
+    min-width: 600px;
+  }
 }

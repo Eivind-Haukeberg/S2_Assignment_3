@@ -9,7 +9,7 @@ const ExpenseItem = ({ expense, onDelete }) => (
     <td>{new Date(expense.date).toLocaleDateString()}</td>
     <td>{expense.category}</td>
     <td>
-      <Button styleType='danger' onClick={() => onDelete(expense.id)}>
+      <Button styleType='delete' onClick={() => onDelete(expense.id)}>
         Delete
       </Button>
     </td>

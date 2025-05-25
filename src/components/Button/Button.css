@@ -11,7 +11,7 @@
   color: var(--color-white);
 }
 
-.button--danger {
-  background-color: var(--color-danger);
+.button--delete {
+  background-color: var(--color-delete);
   color: var(--color-white);
 }

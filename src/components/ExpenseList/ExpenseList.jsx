@@ -3,23 +3,25 @@ import ExpenseItem from '../ExpenseItem/ExpenseItem';
 import './ExpenseList.css';
 
 const ExpenseList = ({ expenses, onDelete }) => (
-  <table className='expense-list'>
-    <caption className='expense-list__caption'>Expense List</caption>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Amount</th>
-        <th>Date</th>
-        <th>Category</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {expenses.map((exp) => (
-        <ExpenseItem key={exp.id} expense={exp} onDelete={onDelete} />
-      ))}
-    </tbody>
-  </table>
+  <div className='expense-list__wrapper'>
+    <table className='expense-list'>
+      <caption className='expense-list__caption'>Expense List</caption>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {expenses.map((exp) => (
+          <ExpenseItem key={exp.id} expense={exp} onDelete={onDelete} />
+        ))}
+      </tbody>
+    </table>
+  </div>
 );
 
 export default ExpenseList;

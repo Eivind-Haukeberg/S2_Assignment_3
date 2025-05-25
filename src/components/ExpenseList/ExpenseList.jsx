@@ -4,6 +4,7 @@ import './ExpenseList.css';
 
 const ExpenseList = ({ expenses, onDelete }) => (
   <table className='expense-list'>
+    <caption className='expense-list__caption'>Expense List</caption>
     <thead>
       <tr>
         <th>Title</th>

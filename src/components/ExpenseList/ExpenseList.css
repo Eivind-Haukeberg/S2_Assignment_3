@@ -11,6 +11,11 @@
   text-align: left;
 }
 
+.expense-list__caption {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+}
+
 .expense-list__wrapper {
   overflow-x: auto;
   margin-bottom: var(--spacing-md);

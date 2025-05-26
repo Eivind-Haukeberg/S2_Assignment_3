@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../Button/Button';
 import './ExpenseForm.css';
 
-const ExpenseForm = ({ onAddExpense }) => {
+const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
   const [form, setForm] = useState({
     title: '',
     amount: '',
@@ -10,26 +10,43 @@ const ExpenseForm = ({ onAddExpense }) => {
     category: '',
   });
 
+  useEffect(() => {
+    if (editingExpense) {
+      setForm({
+        title: editingExpense.title,
+        amount: editingExpense.amount,
+        date: editingExpense.date.slice(0, 10),
+        category: editingExpense.category,
+      });
+    }
+  }, [editingExpense]);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const { title, amount, date, category } = form;
     if (!title || !amount || !date || !category) {
       alert('All fields are required.');
       return;
     }
 
-    const newExpense = {
-      id: crypto.randomUUID(),
+    const expenseData = {
       ...form,
       amount: parseFloat(amount),
       date: new Date(date).toISOString(),
+      id: editingExpense ? editingExpense.id : crypto.randomUUID(),
     };
 
-    onAddExpense(newExpense);
+    if (editingExpense) {
+      onUpdateExpense(expenseData);
+    } else {
+      onAddExpense(expenseData);
+    }
+
     setForm({ title: '', amount: '', date: '', category: '' });
   };
 

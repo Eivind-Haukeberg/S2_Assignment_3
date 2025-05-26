@@ -2,7 +2,7 @@ import React from 'react';
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
 import './ExpenseList.css';
 
-const ExpenseList = ({ expenses, onDelete }) => (
+const ExpenseList = ({ expenses, onDelete, onEdit }) => (
   <div className='expense-list__wrapper'>
     <table className='expense-list'>
       <caption className='expense-list__caption'>Expense List</caption>
@@ -17,7 +17,12 @@ const ExpenseList = ({ expenses, onDelete }) => (
       </thead>
       <tbody>
         {expenses.map((exp) => (
-          <ExpenseItem key={exp.id} expense={exp} onDelete={onDelete} />
+          <ExpenseItem
+            key={exp.id}
+            expense={exp}
+            onDelete={onDelete}
+            onEdit={onEdit}
+          />
         ))}
       </tbody>
     </table>

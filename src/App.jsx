@@ -18,8 +18,17 @@ const App = () => {
     localStorage.setItem('expenses', JSON.stringify(expenses));
   }, [expenses]);
 
+  const [editingExpense, setEditingExpense] = useState(null);
   const handleAdd = (expense) => setExpenses([expense, ...expenses]);
   const handleDelete = (id) => setExpenses(expenses.filter((e) => e.id !== id));
+  const handleEdit = (id) => {
+    const exp = expenses.find((e) => e.id === id);
+    setEditingExpense(exp);
+  };
+  const handleUpdate = (updated) => {
+    setExpenses(expenses.map((e) => (e.id === updated.id ? updated : e)));
+    setEditingExpense(null);
+  };
 
   const filtered = filterMonth
     ? expenses.filter(
@@ -31,9 +40,17 @@ const App = () => {
     <div className='app'>
       <Navbar />
       <main className='app__content'>
-        <ExpenseForm onAddExpense={handleAdd} />
+        <ExpenseForm
+          onAddExpense={handleAdd}
+          onUpdateExpense={handleUpdate}
+          editingExpense={editingExpense}
+        />
         <Filter onChange={setFilterMonth} />
-        <ExpenseList expenses={filtered} onDelete={handleDelete} />
+        <ExpenseList
+          expenses={filtered}
+          onDelete={handleDelete}
+          onEdit={handleEdit}
+        />
         <Total expenses={filtered} />
       </main>
     </div>

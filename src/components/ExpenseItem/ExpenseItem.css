@@ -1,3 +1,7 @@
 .expense-item td {
   padding: var(--spacing-sm);
 }
+.expense-item__actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}

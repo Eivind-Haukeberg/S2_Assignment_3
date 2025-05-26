@@ -1,6 +1,7 @@
 import React from 'react';
 import './Filter.css';
 
+// filter on month
 const Filter = ({ onChange }) => (
   <select className='filter__select' onChange={(e) => onChange(e.target.value)}>
     <option value=''>Filter by Month</option>

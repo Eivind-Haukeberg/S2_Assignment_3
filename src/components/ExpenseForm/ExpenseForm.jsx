@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from '../Button/Button';
 import './ExpenseForm.css';
 
+// Component for adding or editing
 const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
   const [form, setForm] = useState({
     title: '',
@@ -10,6 +11,7 @@ const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
     category: '',
   });
 
+  // Fill form if editing
   useEffect(() => {
     if (editingExpense) {
       setForm({
@@ -21,19 +23,24 @@ const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
     }
   }, [editingExpense]);
 
+  // Update form value on change
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const { title, amount, date, category } = form;
+
+    // Validate form for all fields
     if (!title || !amount || !date || !category) {
       alert('All fields are required.');
       return;
     }
 
+    // Create expense object
     const expenseData = {
       ...form,
       amount: parseFloat(amount),
@@ -41,15 +48,18 @@ const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
       id: editingExpense ? editingExpense.id : crypto.randomUUID(),
     };
 
+    // Add or update
     if (editingExpense) {
       onUpdateExpense(expenseData);
     } else {
       onAddExpense(expenseData);
     }
 
+    // Reset form
     setForm({ title: '', amount: '', date: '', category: '' });
   };
 
+  // Render form
   return (
     <form className='expense-form' onSubmit={handleSubmit}>
       <input
@@ -85,7 +95,7 @@ const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
         <option value='Gaming'>Gaming</option>
       </select>
       <Button type='submit' styleType='primary'>
-        Add Expense
+        {editingExpense ? 'Update Expense' : 'Add Expense'}
       </Button>
     </form>
   );

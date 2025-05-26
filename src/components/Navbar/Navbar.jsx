@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 
+// Navbar with title
 const Navbar = () => (
   <nav className='navbar'>
     <h1 className='navbar__title'>Expense Tracker</h1>

@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../Button/Button';
 import './ExpenseItem.css';
 
+// Render expense row
 const ExpenseItem = ({ expense, onDelete, onEdit }) => (
   <tr className='expense-item'>
     <td>{expense.title}</td>

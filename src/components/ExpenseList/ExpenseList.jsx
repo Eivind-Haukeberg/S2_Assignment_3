@@ -2,6 +2,7 @@ import React from 'react';
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
 import './ExpenseList.css';
 
+// Renders a table
 const ExpenseList = ({ expenses, onDelete, onEdit }) => (
   <div className='expense-list__wrapper'>
     <table className='expense-list'>
@@ -16,10 +17,10 @@ const ExpenseList = ({ expenses, onDelete, onEdit }) => (
         </tr>
       </thead>
       <tbody>
-        {expenses.map((exp) => (
+        {expenses.map((expense) => (
           <ExpenseItem
-            key={exp.id}
-            expense={exp}
+            key={expense.id}
+            expense={expense}
             onDelete={onDelete}
             onEdit={onEdit}
           />

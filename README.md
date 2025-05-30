@@ -1,12 +1,18 @@
-# React + Vite
+# S2_Assignment_3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Expense Tracker App – Assignment 3
 
-Currently, two official plugins are available:
+This project was created as part of the **FFU1200 Frontend Development** course. It is a simple expense tracker built using **React** to practice key concepts like component-based architecture, hooks, local storage, and form validation. The app allows users to add, edit, delete, filter, and store expense data. It is structured in a clean and beginner-friendly way, using Vite for the development environment and Git for version control. This README was drafted by ChatGPT and refined by the author.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 **Live Demo**
 
-## Expanding the ESLint configuration
+👉 [View it on Netlify](https://s2-assignment-3.netlify.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💻 **Tech Used**
+
+- React, css , JavaScript
+- LocalStorage
+- UUID
+- Vite
+- Git + GitHub
+- Netlify

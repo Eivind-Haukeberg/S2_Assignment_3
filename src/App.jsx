@@ -13,8 +13,8 @@ const App = () => {
     return stored ? JSON.parse(stored) : [];
   });
 
-  // Filter month selection
-  const [filterMonth, setFilterMonth] = useState('');
+  // Filter category selection
+  const [filterCategory, setFilterCategory] = useState('');
 
   // Expense currently being edited
   const [editingExpense, setEditingExpense] = useState(null);
@@ -42,12 +42,13 @@ const App = () => {
     setEditingExpense(null);
   };
 
-  // Filter on month
-  const filtered = filterMonth
-    ? expenses.filter(
-        (e) => new Date(e.date).getMonth() === parseInt(filterMonth)
-      )
-    : expenses;
+  // Filter on category
+  let filtered = expenses;
+  if (filterCategory) {
+    filtered = expenses.filter(
+      (expense) => expense.category === filterCategory
+    );
+  }
 
   return (
     <div className='app'>
@@ -58,7 +59,8 @@ const App = () => {
           onUpdateExpense={handleUpdate}
           editingExpense={editingExpense}
         />
-        <Filter onChange={setFilterMonth} />
+        <Filter onChange={setFilterCategory} />
+
         <ExpenseList
           expenses={filtered}
           onDelete={handleDelete}

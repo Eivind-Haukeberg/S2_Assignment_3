@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button.css';
+import styles from './Button.module.css';
 
 // Buttons
 
@@ -10,7 +10,7 @@ const Button = ({
   styleType = 'primary',
 }) => (
   <button
-    className={`button button--${styleType}`}
+    className={`${styles['button']} ${styles[`button--${styleType}`]}`}
     type={type}
     onClick={onClick}>
     {children}

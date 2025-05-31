@@ -1,10 +1,10 @@
 import React from 'react';
-import './Navbar.css';
+import styles from './Navbar.module.css';
 
 // Navbar with title
 const Navbar = () => (
-  <nav className='navbar'>
-    <h1 className='navbar__title'>Expense Tracker</h1>
+  <nav className={styles['navbar']}>
+    <h1 className={styles['navbar__title']}>Expense Tracker</h1>
   </nav>
 );
 

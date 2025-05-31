@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../Button/Button';
-import './ExpenseForm.css';
+import styles from './ExpenseForm.module.css';
 
 // Component for adding or editing
 const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
@@ -61,16 +61,16 @@ const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
 
   // Render form
   return (
-    <form className='expense-form' onSubmit={handleSubmit}>
+    <form className={styles['expense-form']} onSubmit={handleSubmit}>
       <input
-        className='expense-form__input'
+        className={styles['expense-form__input']}
         name='title'
         placeholder='Title'
         value={form.title}
         onChange={handleChange}
       />
       <input
-        className='expense-form__input'
+        className={styles['expense-form__input']}
         name='amount'
         type='number'
         placeholder='Amount'
@@ -78,14 +78,14 @@ const ExpenseForm = ({ onAddExpense, onUpdateExpense, editingExpense }) => {
         onChange={handleChange}
       />
       <input
-        className='expense-form__input'
+        className={styles['expense-form__input']}
         name='date'
         type='date'
         value={form.date}
         onChange={handleChange}
       />
       <select
-        className='expense-form__select'
+        className={styles['expense-form__select']}
         name='category'
         value={form.category}
         onChange={handleChange}>

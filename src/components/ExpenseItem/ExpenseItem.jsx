@@ -1,15 +1,15 @@
 import React from 'react';
 import Button from '../Button/Button';
-import './ExpenseItem.css';
+import styles from './ExpenseItem.module.css';
 
 // Render expense row
 const ExpenseItem = ({ expense, onDelete, onEdit }) => (
-  <tr className='expense-item'>
+  <tr className={styles['expense-item']}>
     <td>{expense.title}</td>
     <td>${expense.amount.toFixed(2)}</td>
     <td>{new Date(expense.date).toLocaleDateString()}</td>
     <td>{expense.category}</td>
-    <td className='expense-item__actions'>
+    <td className={styles['expense-item__actions']}>
       <Button styleType='edit' onClick={() => onEdit(expense.id)}>
         Edit
       </Button>
